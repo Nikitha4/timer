@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/totalTimeInfo"
+        android:id="@+id/intervalTimeInfo"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:layout_marginLeft="20dp"
@@ -15,7 +15,7 @@
         android:text="Total Time:" />
 
     <Spinner
-        android:id="@+id/totalTimeHours"
+        android:id="@+id/intervalTimeHours"
         android:layout_width="110dp"
         android:layout_height="50dp"
         android:layout_marginLeft="150dp"
@@ -23,7 +23,7 @@
 
 
     <TextView
-        android:id="@+id/totalHourInfo"
+        android:id="@+id/intervalHourInfo"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:layout_marginLeft="280dp"
@@ -31,59 +31,44 @@
         android:text="hours" />
 
     <Spinner
-        android:id="@+id/totalTimeMinutes"
+        android:id="@+id/intervalTimeMinutes"
         android:layout_width="110dp"
         android:layout_height="50dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="150dp" />
 
     <TextView
-        android:id="@+id/totalMinuteInfo"
+        android:id="@+id/intervalMinuteInfo"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:layout_marginLeft="280dp"
         android:layout_marginTop="162.5dp"
         android:text="minutes" />
 
+    <Spinner
+        android:id="@+id/numberOfRounds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="350dp" />
 
 
     <TextView
-        android:id="@+id/intervalTimeInfo"
+        android:id="@+id/roundInfo"
         android:layout_width="100dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="20dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="350dp"
-        android:text="Interval Time:" />
+        android:text="Number of Rounds: " />
 
-    <Spinner
-        android:id="@+id/intervalTimeHours"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="300dp" />
 
-    <TextView
-        android:id="@+id/intervalHourInfo"
-        android:layout_width="100dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="312.5dp"
-        android:text="hours" />
-
-    <Spinner
-        android:id="@+id/intervalTimeMinutes"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="400dp" />
-
-    <TextView
-        android:id="@+id/intervalMinuteInfo"
-        android:layout_width="100dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="412.5dp"
-        android:text="minutes" />
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="550dp"
+        android:text="start!" />
 
 
 </RelativeLayout>

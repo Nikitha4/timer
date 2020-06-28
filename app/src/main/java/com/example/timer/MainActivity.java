@@ -2,8 +2,12 @@ package com.example.timer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -11,10 +15,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Spinner totalTimeHours;
-    private Spinner totalTimeMinutes;
     private Spinner intervalTimeHours;
     private Spinner intervalTimeMinutes;
+    private Spinner numberOfRounds;
+    int hours;
+    int minutes;
+    int rounds;
+    private Button startButton;
 
 
     @Override
@@ -22,10 +29,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        totalTimeHours = findViewById(R.id.totalTimeHours);
-        totalTimeMinutes = findViewById(R.id.totalTimeMinutes);
         intervalTimeHours = findViewById(R.id.intervalTimeHours);
         intervalTimeMinutes = findViewById(R.id.intervalTimeMinutes);
+        numberOfRounds = findViewById(R.id.numberOfRounds);
 
         List<Integer> hourOptions = new ArrayList<>();
         hourOptions.add(0);
@@ -115,15 +121,80 @@ public class MainActivity extends AppCompatActivity {
         minuteOptions.add(58);
         minuteOptions.add(59);
 
+        List<Integer> roundOptions = new ArrayList<>();
+        roundOptions.add(1);
+        roundOptions.add(2);
+        roundOptions.add(3);
+        roundOptions.add(4);
+        roundOptions.add(5);
+        roundOptions.add(6);
+        roundOptions.add(7);
+        roundOptions.add(8);
+        roundOptions.add(9);
+        roundOptions.add(10);
+
+
         ArrayAdapter<Integer> hourAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, hourOptions);
         hourAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        totalTimeHours.setAdapter(hourAdapter);
+        intervalTimeHours.setAdapter(hourAdapter);
 
         ArrayAdapter<Integer> minuteAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, minuteOptions);
         minuteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        totalTimeMinutes.setAdapter(minuteAdapter);
-
-        intervalTimeHours.setAdapter(hourAdapter);
         intervalTimeMinutes.setAdapter(minuteAdapter);
+
+        ArrayAdapter<Integer> roundAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, roundOptions);
+        roundAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        numberOfRounds.setAdapter(roundAdapter);
+
+        intervalTimeHours.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                hours = (int) intervalTimeHours.getSelectedItem();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        intervalTimeMinutes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                minutes = (int) intervalTimeMinutes.getSelectedItem();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        numberOfRounds.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                rounds = (int) numberOfRounds.getSelectedItem();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+
+        startButton = findViewById(R.id.startButton);
+
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity();
+            }
+        });
     }
+
+    public void openActivity() {
+        SecondScreen secondScreen = new SecondScreen();
+        secondScreen.initialize(hours, minutes, rounds);
+        Intent intent = new Intent (this, SecondScreen.class);
+        startActivity(intent);
+    }
+
 }

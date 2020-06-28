@@ -16,6 +16,10 @@ public class SecondScreen extends AppCompatActivity {
     private long timeLeftMilliseconds = 600000;
     private boolean timerRunning;
 
+    int numOfHours;
+    int numOfMinutes;
+    int numOfRounds;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,12 @@ public class SecondScreen extends AppCompatActivity {
                 startAndStop();
             }
         });
+    }
+
+    public void initialize(int hours, int minutes, int rounds) {
+        numOfHours = hours;
+        numOfMinutes = minutes;
+        numOfRounds = rounds;
     }
 
     public void startAndStop() {
