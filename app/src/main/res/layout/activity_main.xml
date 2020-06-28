@@ -7,21 +7,83 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/timer_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="10:00"
-        android:textSize="50sp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:id="@+id/totalTimeInfo"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"
+        android:text="Total Time:" />
 
-    <Button
-        android:id="@+id/timer_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start"
-        android:layout_below="@+id/timer_text"
-        android:layout_centerHorizontal="true" />
+    <Spinner
+        android:id="@+id/totalTimeHours"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="50dp" />
+
+
+    <TextView
+        android:id="@+id/totalHourInfo"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="62.5dp"
+        android:text="hours" />
+
+    <Spinner
+        android:id="@+id/totalTimeMinutes"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="150dp" />
+
+    <TextView
+        android:id="@+id/totalMinuteInfo"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="162.5dp"
+        android:text="minutes" />
+
+
+
+    <TextView
+        android:id="@+id/intervalTimeInfo"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="350dp"
+        android:text="Interval Time:" />
+
+    <Spinner
+        android:id="@+id/intervalTimeHours"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="300dp" />
+
+    <TextView
+        android:id="@+id/intervalHourInfo"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="312.5dp"
+        android:text="hours" />
+
+    <Spinner
+        android:id="@+id/intervalTimeMinutes"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="400dp" />
+
+    <TextView
+        android:id="@+id/intervalMinuteInfo"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="412.5dp"
+        android:text="minutes" />
 
 
 </RelativeLayout>
