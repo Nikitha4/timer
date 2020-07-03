@@ -191,9 +191,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivity() {
-        SecondScreen secondScreen = new SecondScreen();
-        secondScreen.initialize(hours, minutes, rounds);
+        //SecondScreen secondScreen = new SecondScreen();
+        //secondScreen.initialize(hours, minutes, rounds);
+        String passInHours = String.valueOf(hours);
+        String passInMinutes = String.valueOf(minutes);
+        String passInRounds = String.valueOf(rounds);
         Intent intent = new Intent (this, SecondScreen.class);
+        intent.putExtra("myHours", passInHours);
+        intent.putExtra("myMinutes", passInMinutes);
+        intent.putExtra("myRounds", passInRounds);
         startActivity(intent);
     }
 
